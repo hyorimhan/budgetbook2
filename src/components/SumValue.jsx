@@ -62,7 +62,7 @@ const SumValue = () => {
   }
 
   const sum = posts.filter((item) => {
-    const date = parseInt(item.date.slice(6, 7));
+    const date = parseInt(item?.date.slice(6, 7));
     return date === saveMonth;
   });
 
