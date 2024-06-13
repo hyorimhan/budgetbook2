@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useQuery } from '@tanstack/react-query';
 import { postList } from '../api/auth';
+import { useEffect } from 'react';
 
 const Container = styled.div`
   max-width: 800px;
@@ -70,6 +71,13 @@ const InputList = () => {
     queryFn: postList,
   });
 
+  useEffect(() => {
+    if (!isAuthenticated) {
+      alert('로그인 정보가 만료되었습니다');
+      navigate('/');
+    }
+  }, [isAuthenticated, navigate]);
+
   if (isLoading) {
     return <div>로딩중입니다</div>;
   }
@@ -83,10 +91,6 @@ const InputList = () => {
     return date === saveMonth;
   });
 
-  if (!isAuthenticated) {
-    alert('로그인 정보가 만료되었습니다');
-    navigate('/');
-  }
   return (
     <Container>
       <Container2>

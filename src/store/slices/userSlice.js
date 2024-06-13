@@ -11,7 +11,6 @@ export const userSlice = createSlice({
     login: (state, action) => {
       state.token = action.payload;
       localStorage.setItem('accessToken', action.payload);
-      console.log('토큰 설정됨:', action.payload);
     },
     logout: (state) => {
       state.token = null;
