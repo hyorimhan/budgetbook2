@@ -1,0 +1,57 @@
+{
+  "expenses": [
+    {
+      "id": "0d0a966e-5c35-4bf0-aca4-f2b1265a432d",
+      "month": 1,
+      "date": "2024-01-13",
+      "item": "식비",
+      "amount": 2000,
+      "description": "메가커피",
+      "createdBy": "Rosie"
+    },
+    {
+      "id": "9aba6d72-5ee7-4f02-a4d4-e8bbff9ded4b",
+      "month": 1,
+      "date": "2024-01-17",
+      "item": "식비",
+      "amount": 21000,
+      "description": "대광참치",
+      "createdBy": "Rosie"
+    },
+    {
+      "id": "b82b213e-8164-4c89-94b0-7246cdcfc4f9",
+      "month": 1,
+      "date": "2024-01-21",
+      "item": "식비",
+      "amount": 412000,
+      "description": "BBQ",
+      "createdBy": "Me"
+    },
+    {
+      "id": "d180194f-7c27-428a-8cd9-ad9114e58821",
+      "month": 1,
+      "date": "2024-01-22",
+      "item": "도서",
+      "amount": 23000,
+      "description": "리액트 마스터",
+      "createdBy": "Me"
+    },
+    {
+      "id": "0abf06c3-8f0e-4ea1-9691-7facab0a91cb",
+      "month": 1,
+      "date": "2024-01-30",
+      "item": "외식",
+      "amount": 100000,
+      "description": "세광양대창",
+      "createdBy": "Me"
+    },
+    {
+      "id": "55e5ac20-5745-4e53-8ed8-9701d8caa41f",
+      "date": "2024-06-13",
+      "item": "123",
+      "amount": "123",
+      "description": "1231212",
+      "userId": "abc1012"
+    }
+  ]
+}
