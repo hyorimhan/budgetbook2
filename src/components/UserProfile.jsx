@@ -89,6 +89,7 @@ const UserProfile = () => {
   const dispatch = useDispatch();
   const isAuthenticated = useSelector((state) => state.users.token);
   const userInfo = useSelector((state) => state.users.userInfo);
+  console.log(userInfo);
 
   useEffect(() => {
     const loginData = async () => {
@@ -101,7 +102,6 @@ const UserProfile = () => {
     };
     loginData();
   }, [isAuthenticated, navigate, dispatch]);
-
   const handleNicknameChange = async (e) => {
     e.preventDefault();
     try {
@@ -113,19 +113,19 @@ const UserProfile = () => {
       if (updateData.success) {
         const updateUserInfo = {
           ...userInfo,
-          nickname: updateData.nickname,
+          nickname: updateData.nickname || userInfo.nickname,
           avatar: updateData.avatar || userInfo.avatar,
         };
         dispatch(setUserInfo(updateUserInfo));
-        alert('닉네임이 변경되었습니다');
+        alert('변경되었습니다');
         setUserName('');
         setUserAvatar(null);
       } else {
-        alert('닉네임 변경에 실패했습니다');
+        alert('변경에 실패했습니다');
       }
     } catch (error) {
       console.error('Failed to update nickname:', error);
-      alert('닉네임 변경에 실패했습니다');
+      alert('변경에 실패했습니다');
       return null;
     }
   };
