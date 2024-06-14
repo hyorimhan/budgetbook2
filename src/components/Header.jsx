@@ -91,7 +91,7 @@ const Header = () => {
   const isAuthenticated = useSelector((state) => state.users.token);
   const userInfo = useSelector((state) => state.users.userInfo);
 
-  const { isLoading, isError } = useQuery({
+  const { isLoading } = useQuery({
     queryKey: ['userInfo'],
     queryFn: () => fetchUserInfo(isAuthenticated, dispatch),
     enabled: !!isAuthenticated,
@@ -102,10 +102,6 @@ const Header = () => {
 
   if (isLoading) {
     return <div>Loading...</div>;
-  }
-
-  if (isError) {
-    return <div>Error...</div>;
   }
 
   const logoutClick = () => {
