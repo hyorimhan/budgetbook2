@@ -1,9 +1,8 @@
 import styled from 'styled-components';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useQuery } from '@tanstack/react-query';
 import { postList } from '../api/auth';
-import { useEffect } from 'react';
 
 const Container = styled.div`
   max-width: 800px;
@@ -59,8 +58,6 @@ const Span = styled.span`
 
 const InputList = () => {
   const saveMonth = useSelector((state) => state.budget.saveMonth);
-  // const isAuthenticated = useSelector((state) => state.users.token);
-  // const navigate = useNavigate();
 
   const {
     data: items,
