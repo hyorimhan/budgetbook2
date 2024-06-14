@@ -69,18 +69,7 @@ const SignUpPage = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-
-    const maxLength = {
-      id: 10,
-      password: 15,
-      nickname: 10,
-    };
-
-    if (value.length <= maxLength[name]) {
-      setFormData({ ...formData, [name]: value });
-    } else {
-      alert(`${name}은 ${maxLength[name]}자 까지 입력 가능합니다`);
-    }
+    setFormData({ ...formData, [name]: value });
   };
 
   //서버에 보내기
@@ -93,18 +82,6 @@ const SignUpPage = () => {
       console.log(response);
     } catch (error) {
       alert(`가입에 실패했습니다 ${error.response.data.message}`);
-    }
-
-    const minLength = {
-      id: 4,
-      password: 4,
-      nickname: 1,
-    };
-    const { name, value } = e.target;
-    if (value.length >= minLength[name]) {
-      setFormData({ ...formData, [name]: value });
-    } else {
-      alert(`${name}은 ${minLength[name]}자 보다 적게 입력 불가능합니다`);
     }
   };
   return (
