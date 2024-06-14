@@ -164,8 +164,8 @@ const DetailPage = () => {
   });
 
   // 수정 요청을 보냄
-  const { mutate: editCash } = useMutation({
-    mutationFn: (editInput) => editPost(editInput),
+  const editPostMutation = useMutation({
+    mutationFn: editPost,
     onSuccess: () => {
       queryClient.invalidateQueries(['posts']);
       navigate('/');
@@ -191,7 +191,7 @@ const DetailPage = () => {
     };
 
     if (userInfo.id === posts.userId) {
-      editCash(editInput);
+      editPostMutation.mutate(editInput);
     } else {
       alert('작성자만 수정할 수 있습니다');
     }
