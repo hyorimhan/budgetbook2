@@ -59,8 +59,8 @@ const Span = styled.span`
 
 const InputList = () => {
   const saveMonth = useSelector((state) => state.budget.saveMonth);
-  const isAuthenticated = useSelector((state) => state.users.token);
-  const navigate = useNavigate();
+  // const isAuthenticated = useSelector((state) => state.users.token);
+  // const navigate = useNavigate();
 
   const {
     data: items,
@@ -70,13 +70,6 @@ const InputList = () => {
     queryKey: ['items'],
     queryFn: postList,
   });
-
-  useEffect(() => {
-    if (!isAuthenticated) {
-      alert('로그인 정보가 만료되었습니다');
-      navigate('/');
-    }
-  }, [isAuthenticated, navigate]);
 
   if (isLoading) {
     return <div>로딩중입니다</div>;
